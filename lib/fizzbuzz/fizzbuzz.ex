@@ -11,14 +11,15 @@ defmodule Kata.FizzBuzz do
     If the number is a multiple of both three and five, return the string "FizzBuzz".
   """
   def convert(number) when is_number(number) do
-    multiple_of_three = rem(number, 3) == 0
-    multiple_of_five = rem(number, 5) == 0
-
     cond do
-      multiple_of_three && multiple_of_five -> "FizzBuzz"
-      multiple_of_three -> "Fizz"
-      multiple_of_five -> "Buzz"
+      number |> divisible_by(3) and number |> divisible_by(5) -> "FizzBuzz"
+      number |> divisible_by(3) -> "Fizz"
+      number |> divisible_by(5) -> "Buzz"
       number -> number
     end
+  end
+
+  defp divisible_by(number, factor) do
+    rem(number, factor) == 0
   end
 end
