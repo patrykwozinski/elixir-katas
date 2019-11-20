@@ -12,7 +12,7 @@ defmodule KataTest.FizzBuzzTest do
     @input input
     @converted converted
 
-    test "convert regular #{@input} to regular number #{@converted}" do
+    test "convert regular #{input} to regular number #{converted}" do
       assert Kata.FizzBuzz.convert(@input) == @converted
     end
   end
