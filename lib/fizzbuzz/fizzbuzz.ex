@@ -11,6 +11,10 @@ defmodule Kata.FizzBuzz do
     If the number is a multiple of both three and five, return the string "FizzBuzz".
   """
   def convert(number) do
-    number
+    cond do
+      rem(number, 3) == 0 -> "Fizz"
+      rem(number, 5) == 0 -> "Buzz"
+      number -> number
+    end
   end
 end
