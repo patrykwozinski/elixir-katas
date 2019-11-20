@@ -15,7 +15,7 @@ defmodule Kata.FizzBuzz do
       number |> divisible_by(3) and number |> divisible_by(5) -> "FizzBuzz"
       number |> divisible_by(3) -> "Fizz"
       number |> divisible_by(5) -> "Buzz"
-      number -> number
+      number -> number |> to_string()
     end
   end
 
