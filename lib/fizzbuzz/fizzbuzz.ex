@@ -6,20 +6,31 @@ defmodule Kata.FizzBuzz do
   """
 
   @doc """
-    If the number is a multiple of three, return the string "Fizz".
-    If the number is a multiple of five, return the string "Buzz".
     If the number is a multiple of both three and five, return the string "FizzBuzz".
   """
-  def convert(number) when is_number(number) do
-    cond do
-      number |> divisible_by(3) and number |> divisible_by(5) -> "FizzBuzz"
-      number |> divisible_by(3) -> "Fizz"
-      number |> divisible_by(5) -> "Buzz"
-      number -> number |> to_string()
-    end
+  def convert(number) when is_integer(number) and rem(number, 15) == 0 do
+    "FizzBuzz"
   end
 
-  defp divisible_by(number, factor) do
-    rem(number, factor) == 0
+  @doc """
+    If the number is a multiple of three, return the string "Fizz".
+  """
+  def convert(number) when is_integer(number) and rem(number, 3) == 0 do
+    "Fizz"
+  end
+
+  @doc """
+    If the number is a multiple of five, return the string "Buzz".
+  """
+  def convert(number) when is_integer(number) and rem(number, 5) == 0 do
+    "Buzz"
+  end
+
+  @doc """
+    If the number is regular then regular string returned.
+  """
+  def convert(number) when is_integer(number) do
+    number
+    |> to_string()
   end
 end
