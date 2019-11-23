@@ -1,18 +1,25 @@
 defmodule KataTest.RomanNumeralTest do
   use ExUnit.Case
 
-  numbers = [
-    [1, "I"],
-    [2, "II"],
-    [3, "III"],
-  ]
+  test "convert arabic number to roman" do
+    numbers = [
+      {1, "I"},
+      {2, "II"},
+      {3, "III"},
+#      {4, "IV"},
+#      {5, "V"},
+#      {9, "IX"},
+#      {15, "XV"},
+#      {40, "XL"},
+#      {50, "L"},
+#      {90, "XC"},
+#      {100, "C"},
+#      {400, "CD"},
+#      {500, "D"},
+#      {900, "CM"},
+#      {2019, "MMXIX"},
+    ]
 
-  Enum.each numbers, fn [arabic, roman] ->
-    @arabic arabic
-    @roman roman
-
-    test "convert number #{arabic} to roman" do
-      assert Kata.RomanNumeral.romanFor(@arabic) == @roman
-    end
+    Enum.each(numbers, fn ({arabic, roman}) -> assert Kata.RomanNumeral.romanFor(arabic) == roman end)
   end
 end
