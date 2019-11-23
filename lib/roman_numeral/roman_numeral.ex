@@ -9,6 +9,10 @@ defmodule Kata.RomanNumeral do
     Converts arabic numerals to roman
   """
   def romanFor(number) when is_integer(number) do
-    "a"
+    cond do
+      number == 1 -> "I"
+      number == 2 -> "II"
+      number == 3 -> "III"
+    end
   end
 end
