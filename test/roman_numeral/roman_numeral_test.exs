@@ -1,5 +1,6 @@
 defmodule KataTest.RomanNumeralTest do
   use ExUnit.Case
+  doctest Kata.RomanNumeral
 
   test "convert arabic number to roman" do
     numbers = [

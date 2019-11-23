@@ -23,6 +23,10 @@ defmodule Kata.RomanNumeral do
 
   @doc """
     Converts arabic numerals to roman
+
+    ## Examples
+      iex> Kata.RomanNumeral.toRoman(1993)
+      "MCMXCIII"
   """
   def toRoman(number) when is_integer(number) do
     toRoman(number, @numeral_mapping)
@@ -34,7 +38,7 @@ defmodule Kata.RomanNumeral do
     roman <> toRoman(number - arabic, [{arabic, roman} | tail])
   end
 
-  defp toRoman(number, [{arabic, roman} | tail]) when number < arabic do
+  defp toRoman(number, [{arabic, _roman} | tail]) when number < arabic do
     toRoman(number, tail)
   end
 end
