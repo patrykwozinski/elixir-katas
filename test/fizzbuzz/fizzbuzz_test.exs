@@ -1,5 +1,6 @@
 defmodule KataTest.FizzBuzzTest do
   use ExUnit.Case
+  doctest Kata.FizzBuzz
 
   regulars = [
     [1, "1"],
