@@ -2,6 +2,8 @@ defmodule KataTest.RomanNumeralTest do
   use ExUnit.Case
   doctest Kata.RomanNumeral
 
+  alias Kata.RomanNumeral, as: RomanNumeral
+
   test "convert arabic number to roman" do
     numbers = [
       {1, "I"},
@@ -19,6 +21,6 @@ defmodule KataTest.RomanNumeralTest do
       {3001, "MMMI"},
     ]
 
-    Enum.each(numbers, fn ({arabic, roman}) -> assert Kata.RomanNumeral.toRoman(arabic) == roman end)
+    Enum.each(numbers, fn ({arabic, roman}) -> assert RomanNumeral.toRoman(arabic) == roman end)
   end
 end

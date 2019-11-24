@@ -2,6 +2,8 @@ defmodule KataTest.FizzBuzzTest do
   use ExUnit.Case
   doctest Kata.FizzBuzz
 
+  alias Kata.FizzBuzz, as: FizzBuzz
+
   regulars = [
     [1, "1"],
     [2, "2"],
@@ -13,7 +15,7 @@ defmodule KataTest.FizzBuzzTest do
     @converted converted
 
     test "convert regular #{input} to regular number #{converted}" do
-      assert Kata.FizzBuzz.convert(@input) == @converted
+      assert FizzBuzz.convert(@input) == @converted
     end
   end
 
@@ -21,7 +23,7 @@ defmodule KataTest.FizzBuzzTest do
     @input input
 
     test "convert multiple of #{input} to Fizz" do
-      assert Kata.FizzBuzz.convert(@input) == "Fizz"
+      assert FizzBuzz.convert(@input) == "Fizz"
     end
   end
 
@@ -29,7 +31,7 @@ defmodule KataTest.FizzBuzzTest do
     @input input
 
     test "convert multiple of #{input} to Buzz" do
-      assert Kata.FizzBuzz.convert(@input) == "Buzz"
+      assert FizzBuzz.convert(@input) == "Buzz"
     end
   end
 
@@ -37,7 +39,7 @@ defmodule KataTest.FizzBuzzTest do
     @input input
 
     test "convert #{input} as multiple of 3 and multiple of 5 to FizzBuzz" do
-      assert Kata.FizzBuzz.convert(@input) == "FizzBuzz"
+      assert FizzBuzz.convert(@input) == "FizzBuzz"
     end
   end
 end
