@@ -5,4 +5,4 @@ fizzbuzz = fn
   _, _, c -> c
 end
 
-IO.inspect fizzbuzz.(2, 2, 600)
+IO.inspect(fizzbuzz.(2, 2, 600))
