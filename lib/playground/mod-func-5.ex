@@ -1,4 +1,4 @@
-defmodule Calculator do
+defmodule Calculator2 do
   def gcd(x, 0) do
     x
   end
