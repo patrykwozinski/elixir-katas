@@ -3,7 +3,7 @@ defmodule MyList do
     0
   end
 
-  def len([_ | tail]) do
+  def len([_head | tail]) do
     1 + len(tail)
   end
 end
