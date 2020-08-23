@@ -3,9 +3,9 @@ defmodule MyList do
     0
   end
 
-  def len([head | tail]) do
+  def len([_ | tail]) do
     1 + len(tail)
   end
 end
 
-MyList.len([1, 2, 3])
+IO.puts(MyList.len([1, 2, 3, 4, 5]))
